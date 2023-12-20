@@ -229,11 +229,41 @@ function INITIALIZE()	{
 		Font[2] = font_add_sprite_ext(sFont3," !\"#$%&'()*+,-./0123456789:;<=>@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~",true,0)	
 		Font[3] = font_add_sprite_ext(sFont4,"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678.:,;'!?-`&+[]",true,0)	
 	}
+	globalvar Commentary;					{
+		Commentary[0]	= new CommentaryData("Great save by the goalkeeper!");
+		Commentary[1]	= new CommentaryData("The crowd goes wild!");
+		Commentary[2]	= new CommentaryData("What a remarkable goal! Pure skill on display!");
+		Commentary[3]	= new CommentaryData("A perfect throw! That's how you score in style!");
+		Commentary[4]	= new CommentaryData("Unbelievable teamwork! The opponents never saw it coming!");
+		Commentary[5]	= new CommentaryData("An expert block! Defense wins championships!");
+		Commentary[6]	= new CommentaryData("Incredible reflexes! The goalkeeper is on fire!");
+		Commentary[7]	= new CommentaryData("The ball dances around the defenders! Poetry in motion!");
+		Commentary[8]	= new CommentaryData("A strategic play! The opponents are left in awe!");
+		Commentary[9]	= new CommentaryData("Precision in every move! That's how you secure a goal!");
+		Commentary[10]	= new CommentaryData("The crowd goes wild! A fan-favorite moment!");
+		Commentary[11]	= new CommentaryData("Spectacular goal! The highlight of the match!");
+	}
 	globalvar Current;						{ 
 		Current = {
-			MODE:				-1,
-			MATCH:			-1,
-			STADIUM:			-1,
+			MODE:				-1,	// Exhibition, Tournament, Special Games
+			MATCH:			-1,	// Singles or Doubles
+			STADIUM:			-1,	// Stadium Select
+			STATS:	{
+				GOALS: 0,
+				TOTAL_WINS: TEAMA.getWINS() + TEAMB.getWINS()
+			}
 		}
+	}
+	globalvar Achievement;					{
+		Achievement[0]	= new AchievementData("First Victory", "Win your first match.", function() {
+			return Current.STATS.TOTAL_WINS > 0
+		});
+		Achievement[1]	= new AchievementData("Speed Demon", "Score 3 goals in a row with a Speed character.", function() {
+			return Player[0].CHARACTER.TYPE = CharacterType[0] and Current.STATS.GOALS = 3
+		});
+		Achievement[2]	= new AchievementData("Unstoppable Duo", "Win a Doubles match without conceding a goal.", function() {
+		    return Current.MODE == "Doubles" && Current.STATS.OPPONENT_GOALS == 0;
+		});
+		
 	}
 }
