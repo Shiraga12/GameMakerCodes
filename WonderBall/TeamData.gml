@@ -1,7 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-///@desc 
-///@param COLOR Team's color
+/// @desc TeamData Constructor
+/// @param {color} COLOR - The color of the team.
 function TeamData(_COLOR) constructor{
 	COLOR			=	_COLOR
 	TEAMMATES	=	[]
@@ -13,10 +11,14 @@ function TeamData(_COLOR) constructor{
 	LOSSES		=	0
 	
 	/*	Getters */	{
-		static getCOLOR			= function() {		return COLOR;	}
-		static getTEAMMATES	= function() {		return TEAMMATES;	}
-		static getTEAMMATE		= function(_i) {		return TEAMMATES[_i];	}
-		static getPOINTS			= function(_i) {		return POINTS;	}
+		static getCOLOR			= function() {	return COLOR;	}
+		static getTEAMMATES	= function() {	return TEAMMATES;	}
+		static getTEAMMATE		= function(_i) {	return TEAMMATES[_i];	}
+		static getPOINTS			= function(_i) {	return POINTS;	}
+		static getWIN			= function() {	return WIN;	}
+		static getWINS			= function() {	return WINS;	}
+		static getLOSE			= function() {	return LOSE;	}
+		static getLOSSES		= function() {	return LOSSES;	}
 	}
 	/*	Setters */	{
 		static setPOINTS			= function(_POINTS)	{		POINTS	=	_POINTS	}
@@ -40,6 +42,7 @@ function TeamData(_COLOR) constructor{
 		static addPOINTS				= function(_POINTS)		{		POINTS	+=	_POINTS	}
 		static subPOINTS				= function(_POINTS)		{		POINTS	-=	_POINTS	}
 																	
-		static addWINS				= function(_WINS)		{		WINS		+=	_WINS	}
+		static addWINS				= function(_WINS)		{		WINS		+=	_WINS		}
+		static addLOSSES			= function(_LOSSES)		{		LOSSES	+=	_LOSSES	}
 	}
 }
