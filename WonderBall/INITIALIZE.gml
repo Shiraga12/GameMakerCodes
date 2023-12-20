@@ -208,14 +208,14 @@ function INITIALIZE()	{
 		Tournament = new TournamentData()
 	}
 	globalvar Term;							{
-		Term[0]	= new TermData("Starting",			"The game is top-down. Players are placed on the opposite sides of the stadium.");
-		Term[1]	= new TermData("Gameplay",			"To throw the ball, aim with the right stick, and throw with the right shoulder trigger. To block the goal, press the spin attack button to send the ball off-course. Depending on the stage, there are various gimmicks that can affect the gameplay (such as Casino Slots, Icy floor, or Score multiplier).");
-		Term[2]	= new TermData("Items",				"Speed-Up: Makes the player faster for a limited time.");
-		Term[3]	= new TermData("Scoring",				"If the ball heads to the opponent’s goal, they score a point. If the opponent scores in their own goal, the opposite side scores a point.");
-		Term[4]	= new TermData("Ending the game",	"Timed Match: The team with the most points within the time limit wins. Score Match: The team who reaches the target score before the opponent team wins. SUDDEN DEATH: If both teams have the same score in any mode, they will enter sudden death where the next score will end the game.");
-		Term[5]	= new TermData("Speed",				"Speed characters are much faster than other types but it is at the cost of power.");
-		Term[6]	= new TermData("All-round",			"All-round characters do not excel at any one aspect of the game.");
-		Term[7]	= new TermData("Power",				"Power characters are strong, with a sacrifice in speed.");
+		Term[0]	= new TermData("Starting",			"Players are placed on the opposite sides of the stadium.");
+		Term[1]	= new TermData("Throwing",			"To throw the ball, aim with the right stick, and throw with the right shoulder trigger.");
+		Term[2]	= new TermData("Blocking",			"Press the spin attack button to send the ball off-course.");
+		Term[3]	= new TermData("Gimmicks",			"Depending on the stage, there are various gimmicks that can affect the gameplay (such as Casino Slots, Icy floor, or Score multiplier)");
+		Term[4]	= new TermData("Items",				"Speed-Up: Makes the player faster for a limited time.");
+		Term[5]	= new TermData("Scoring",				"If the ball heads to the opponent’s goal, they score a point. If the opponent scores in their own goal, the opposite side scores a point.");
+		Term[6]	= new TermData("Ending",				"Timed Match: The team with the most points within the time limit wins.\nScore Match: The team who reaches the target score before the opponent team wins.\nSUDDEN DEATH: If both teams have the same score in any mode, they will enter sudden death where the next score will end the game.");
+		Term[7]	= new TermData("Character Types",	"Speed characters are much faster than other types, but it is at the cost of power.\nAll-Round characters do not excel at any one aspect of the game.\nPower characters are strong, with a sacrifice in speed.\nTricky characters have unique abilities.\nEcho Player (defined as ‘e’): A character who has the same abilities as the character they are based on, but their abilities differ in personality.");
 	}
 	globalvar Player;							{
 		Player[0]	= new PlayerData(1, c_blue);
