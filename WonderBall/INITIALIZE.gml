@@ -4,6 +4,9 @@ function INITIALIZE()	{
 	/* Screen	*/						{
 		#macro SCREEN_WIDTH  display_get_gui_width()	
 		#macro SCREEN_HEIGHT display_get_gui_height()	
+		
+		#macro SCREEN_WIDTH_HALF  SCREEN_WIDTH / 2
+		#macro SCREEN_HEIGHT_HALF SCREEN_HEIGHT / 2
 	}
 	/* Controls	*/						{
 	    #macro P1KEY_UP				max(keyboard_check(vk_up),							gamepad_button_check(0,gp_padu),					(gamepad_axis_value(0,gp_axislv) < 0))
@@ -248,6 +251,7 @@ function INITIALIZE()	{
 			MODE:				-1,	// Exhibition, Tournament, Special Games
 			MATCH:			-1,	// Singles or Doubles
 			STADIUM:			-1,	// Stadium Select
+			ROUNDS:			1,
 			STATS:	{
 				GOALS: 0,
 				TOTAL_WINS: TEAMA.getWINS() + TEAMB.getWINS()
