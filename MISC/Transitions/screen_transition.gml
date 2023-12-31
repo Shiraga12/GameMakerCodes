@@ -31,7 +31,7 @@ enum TR_WAY {
 /// @param {real}				Logo		Logo to use. (For TR_TYPE.LOGO_IRIS Only!)
 /// @param {real}				Speed		Transition speed (range goes from 0 to infinite).
 /// @returns {id} Description
-function screen_transition_INOUT(_type1, _type2, _color = c_black, _callback1 = function() {}, _callback2 = function() {}, _logo = -1, _speed = 0.01) {
+function screen_transition(_type1, _type2, _color = c_black, _callback1 = function() {}, _callback2 = function() {}, _logo = -1, _speed = 0.01) {
 	// Handle optional parameters with default values
 	Type1			=	_type1;
 	Type2			=	_type2;
@@ -41,7 +41,7 @@ function screen_transition_INOUT(_type1, _type2, _color = c_black, _callback1 = 
 	Logo			=	_logo;
     Speed			=	_speed;
 
-    var TRANSITION = instance_create_depth(0,0,-9999,oTransitionINOUT)
+    var TRANSITION = instance_create_depth(0,0,-9999,oTransition)
 	TRANSITION.Type1		=	Type1			
 	TRANSITION.Type2		=	Type2	
 	TRANSITION.Type			=	Type1
