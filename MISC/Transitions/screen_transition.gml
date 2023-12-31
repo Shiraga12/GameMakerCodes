@@ -76,3 +76,15 @@ function screen_transition_get_speed(index) 						{}
 function screen_transition_get_render_surface() 					{}
 function screen_transition_is_paused(index) 						{}
 function screen_transition_modify(transition_instance, vars_array, values_array)	{}
+/// @desc  SET TRANSITION LOGO
+/// @param {id}     index    The index of the screen transition.
+/// @param {asset.GMsprite}   newLogo  The new logo to set for the transition.
+/// @returns {void}           Description
+function screen_transition_set_logo(index, newLogo) {
+    if (instance_exists(index)) {
+        index.Logo = newLogo;
+        show_debug_message("Set Logo for Transition: " + string(newLogo));
+    } else {
+        show_debug_message("Error: Invalid transition instance.");
+    }
+}
