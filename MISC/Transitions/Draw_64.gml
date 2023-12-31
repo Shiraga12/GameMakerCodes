@@ -142,4 +142,56 @@ switch(Type) {
 	    surface_free(global.SCREEN_SURFACE);
 	    break;
 	}
+case TR_TYPE.FLIP_HORIZONTAL: {
+    // Add your implementation for FLIP_HORIZONTAL transition
+    draw_surface(global.SCREEN_SURFACE, SCREEN_WIDTH * (progress - 1), 0);
+    break;
+}
+
+case TR_TYPE.FLIP_VERTICAL: {
+    // Add your implementation for FLIP_VERTICAL transition
+    draw_surface(global.SCREEN_SURFACE, 0, SCREEN_HEIGHT * (progress - 1));
+    break;
+}
+
+case TR_TYPE.ROTATE_LEFT: {
+    // Add your implementation for ROTATE_LEFT transition
+    draw_surface(global.SCREEN_SURFACE, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 1, 1, progress * 360);
+    break;
+}
+
+case TR_TYPE.ROTATE_RIGHT: {
+    // Add your implementation for ROTATE_RIGHT transition
+    draw_surface(global.SCREEN_SURFACE, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 1, 1, -progress * 360);
+    break;
+}
+
+case TR_TYPE.BOUNCE: {
+    // Add your implementation for BOUNCE transition
+    var bounceProgress = sin(progress * pi);
+    draw_surface(global.SCREEN_SURFACE, 0, bounceProgress * SCREEN_HEIGHT / 4);
+    break;
+}
+
+case TR_TYPE.BLINK: {
+    // Add your implementation for BLINK transition
+    if (floor(progress * 10) mod 2 == 0) {
+        draw_surface(global.SCREEN_SURFACE, 0, 0);
+    }
+    break;
+}
+
+case TR_TYPE.PIXELATE: {
+    // Add your implementation for PIXELATE transition
+    draw_surface(global.SCREEN_SURFACE, 0, 0, SCREEN_WIDTH * progress / 10, SCREEN_HEIGHT * progress / 10);
+    break;
+}
+
+case TR_TYPE.CROSS_FADE: {
+    // Add your implementation for CROSS_FADE transition
+    var alpha = progress;
+    draw_surface(global.SCREEN_SURFACE, 0, 0);
+    draw_surface(global.SCREEN_SURFACE, 0, 0, c_white, alpha);
+    break;
+}
 }
