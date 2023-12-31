@@ -1,18 +1,33 @@
 // Constants for transition types
 enum TR_TYPE {
-    	FADE,		// Fade transition
-    	WIPE_LEFT,	// Wipe left transition
-    	WIPE_RIGHT,	// Wipe right transition
-    	WIPE_UP,	// Wipe up transition
-    	WIPE_DOWN,	// Wipe down transition
-    	SLIDE_LEFT,	// Slide left transition
-	SLIDE_RIGHT,	// Slide right transition
-	SLIDE_UP,	// Slide up transition
-	SLIDE_DOWN,	// Slide down transition
-	ZOOM,		// Zoom in transition
- 	CARTOON_IRIS,	// Cartoon iris transition
-	LOGO_IRIS,	// Logo iris transition
-	SCALE,		// Scale in transition
+    // Existing Transition Types
+    FADE,
+    WIPE_LEFT,
+    WIPE_RIGHT,
+    WIPE_UP,
+    WIPE_DOWN,
+    SLIDE_LEFT,
+    SLIDE_RIGHT,
+    SLIDE_UP,
+    SLIDE_DOWN,
+    ZOOM,
+    CARTOON_IRIS,
+    LOGO_IRIS,
+    SCALE,
+
+    // Additional Transition Types
+    FLIP_HORIZONTAL,        // Flip horizontally transition
+    FLIP_VERTICAL,          // Flip vertically transition
+    ROTATE_LEFT,            // Rotate left transition
+    ROTATE_RIGHT,           // Rotate right transition
+    BOUNCE,                 // Bounce transition
+    BLINK,                  // Blink transition
+    PIXELATE,               // Pixelate transition
+    CROSS_FADE,             // Cross fade transition
+    DISSOLVE,               // Dissolve transition
+    SWAP,                   // Swap transition
+    SHAKE,                  // Shake transition
+    FADE_COLOR,             // Fade color transition
     // Add more transition types as needed
 };
 
