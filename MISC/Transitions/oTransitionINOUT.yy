@@ -1,4 +1,4 @@
-{
+m{
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "oTransitionINOUT",
